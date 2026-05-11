@@ -4,34 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>What's Your Crypto Persona? 🚀</title>
-<meta name="description" content="Take the quiz to discover your true crypto identity. Are you a HODLer, a Degen, a Builder, or a No-Coiner? Share with friends!">
+<meta name="description" content="Take the quiz to discover your true crypto identity. Are you a HODLer, Degen, Builder, or No-Coiner? Share with friends!">
 <meta property="og:title" content="What's Your Crypto Persona? 🚀">
-<meta property="og:description" content="I got DEGEN APE 🦍 — what's your crypto persona?">
-<meta property="og:type" content="website">
+<meta property="og:description" content="I just discovered my crypto persona — what's yours?">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:linear-gradient(135deg,#0a0020,#150040,#0a0020);color:#e0d8ff;font-family:-apple-system,BlinkMacSystemFont,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem}
+body{background:linear-gradient(135deg,#0a0020,#150040,#0a0020);color:#e0d8ff;font-family:-apple-system,BlinkMacSystemFont,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:1rem}
+.ad-banner{width:100%;max-width:728px;min-height:90px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;margin:0.5rem 0;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .container{max-width:550px;width:100%;text-align:center}
-h1{font-size:2rem;background:linear-gradient(90deg,#f7931a,#ff6b35,#ff00ff,#14F195);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1.5rem}
+h1{font-size:1.8rem;background:linear-gradient(90deg,#f7931a,#ff6b35,#ff00ff,#14F195);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1rem}
 .progress{height:4px;background:#222;border-radius:2px;margin:1rem 0;overflow:hidden}
 .progress-bar{height:100%;background:linear-gradient(90deg,#f7931a,#14F195);transition:width .3s}
-.question{font-size:1.3rem;margin:1.5rem 0;min-height:60px}
-.options{display:flex;flex-direction:column;gap:.6rem}
-.option{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);padding:1rem;border-radius:12px;cursor:pointer;text-align:left;transition:all .2s;font-size:1rem}
-.option:hover{background:rgba(255,255,255,0.1);border-color:#f7931a;transform:scale(1.02)}
+.question{font-size:1.2rem;margin:1.2rem 0;min-height:50px}
+.options{display:flex;flex-direction:column;gap:.5rem}
+.option{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);padding:.9rem;border-radius:12px;cursor:pointer;text-align:left;transition:all .2s;font-size:.95rem}
+.option:hover{background:rgba(255,255,255,0.1);border-color:#f7931a}
 .option.selected{background:rgba(247,147,26,0.2);border-color:#f7931a}
 .result-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:2rem;margin:1rem 0;display:none}
 .result-emoji{font-size:5rem;margin-bottom:.5rem}
 .result-title{font-size:2rem;font-weight:700;margin:.5rem 0}
 .result-desc{color:#aaa;margin:1rem 0;line-height:1.5}
 .share-btn{display:inline-block;background:#1da1f2;color:#fff;padding:.8rem 2rem;border-radius:25px;text-decoration:none;font-weight:700;margin:.5rem;cursor:pointer;border:none;font-size:1rem}
-.restart{background:#555;color:#fff;padding:.5rem 1.5rem;border-radius:20px;border:none;cursor:pointer;margin-top:1rem}
-.tip-jar{margin-top:1.5rem;color:#555;font-size:.7rem}
-.tip-jar code{color:#f7931a;font-size:.65rem}
+.restart{background:#555;color:#fff;padding:.5rem 1.5rem;border-radius:20px;border:none;cursor:pointer;margin-top:.5rem;font-size:.9rem}
+.affiliate{background:rgba(20,241,149,0.08);border:1px solid rgba(20,241,149,0.2);border-radius:12px;padding:1rem;margin-top:1.5rem;text-align:center;font-size:.85rem}
+.affiliate a{color:#14F195;font-weight:700;text-decoration:none}
+.affiliate a:hover{text-decoration:underline}
 .hidden{display:none}
 </style>
 </head>
 <body>
+
+<div class="ad-banner" id="ad-top">
+  <iframe data-aa="YOUR_AADS_PUBLISHER_ID" src="//acceptable.a-ads.com/random" scrolling="no" style="border:0;padding:0;overflow:hidden;width:728px;height:90px"></iframe>
+</div>
+
 <div class="container" id="quiz-container">
   <h1>🚀 What's Your Crypto Persona?</h1>
   <div class="progress"><div class="progress-bar" id="progress" style="width:0%"></div></div>
@@ -44,13 +50,16 @@ h1{font-size:2rem;background:linear-gradient(90deg,#f7931a,#ff6b35,#ff00ff,#14F1
   <div class="result-emoji" id="result-emoji"></div>
   <div class="result-title" id="result-title"></div>
   <div class="result-desc" id="result-desc"></div>
-  <button class="share-btn" onclick="share()">📤 Share Your Result</button>
+  <button class="share-btn" onclick="share()">📤 Share on Twitter</button>
   <button class="restart" onclick="restart()">🔄 Retake Quiz</button>
-  <div class="tip-jar">
-    <p>Loved the quiz? Tips appreciated ❤️</p>
-    <p>ETH: <code>0x286158debdEF01185E21E88847A87C5F6Dca8112</code></p>
-    <p>SOL: <code>CPz4Pr8hM5ZoBq7VDXkMYtweEWEuqUFMDGsLdPHbknSG</code></p>
+  <div class="affiliate">
+    <p>🚀 Ready to start your crypto journey?</p>
+    <p><a href="https://coinbase.com/join/YOUR_REFERRAL" target="_blank">Sign up for Coinbase → Get $10 in free Bitcoin</a></p>
   </div>
+</div>
+
+<div class="ad-banner" id="ad-bottom">
+  <iframe data-aa="YOUR_AADS_PUBLISHER_ID" src="//acceptable.a-ads.com/random" scrolling="no" style="border:0;padding:0;overflow:hidden;width:728px;height:90px"></iframe>
 </div>
 
 <script>
@@ -63,60 +72,52 @@ const questions = [
 ];
 
 const personas = {
-  "🦍 DEGEN APE": {emoji:"🦍", desc:"You YOLO into every dip, eat crayons for breakfast, and check charts during funerals. 1000x or zero — you wouldn't have it any other way.", shares:"I'm a DEGEN APE 🦍"},
-  "💎 DIAMOND HANDS": {emoji:"💎", desc:"You've held through 90% drawdowns and still haven't blinked. Your heirs will inherit your seed phrase. Legends speak of your conviction.", shares:"I'm DIAMOND HANDS 💎"},
-  "🧠 CRYPTO WIZARD": {emoji:"🧠", desc:"You understand L2s, ZK-rollups, MEV, and yield optimization. People DM you for alpha. You quietly compound while others gamble.", shares:"I'm a CRYPTO WIZARD 🧠"},
-  "🌿 NO-COINER": {emoji:"🌿", desc:"You're here because a friend sent this. You think Bitcoin is a scam but also kinda wish you bought at $100. You have better sleep than all of us.", shares:"I'm a NO-COINER 🌿"},
-  "🐦 CRYPTO TWITTER FIEND": {emoji:"🐦", desc:"You've been ratio'd by CZ, blocked by more accounts than you follow, and your notifications haven't stopped since 2021. GM.", shares:"I'm a CRYPTO TWITTER FIEND 🐦"}
+  "🦍 DEGEN APE": {emoji:"🦍", desc:"You YOLO into every dip, eat crayons for breakfast, and check charts during funerals. 1000x or zero — you wouldn't have it any other way."},
+  "💎 DIAMOND HANDS": {emoji:"💎", desc:"You've held through 90% drawdowns and still haven't blinked. Your heirs will inherit your seed phrase. Legends speak of your conviction."},
+  "🧠 CRYPTO WIZARD": {emoji:"🧠", desc:"You understand L2s, ZK-rollups, MEV, and yield optimization. People DM you for alpha. You quietly compound while others gamble."},
+  "🌿 NO-COINER": {emoji:"🌿", desc:"You're here because a friend sent this. You think Bitcoin is a scam but also kinda wish you bought at $100. You have better sleep than all of us."},
+  "🐦 CRYPTO TWITTER FIEND": {emoji:"🐦", desc:"You've been ratio'd by CZ, blocked by more accounts than you follow, and your notifications haven't stopped since 2021. GM."}
 };
 
-let answers = [];
-let current = 0;
+let answers=[], current=0;
 
-function showQuestion() {
-  if (current >= questions.length) return showResult();
-  const q = questions[current];
-  document.getElementById('question').textContent = q.q;
-  document.getElementById('options').innerHTML = q.o.map((o,i) => 
-    `<div class="option" onclick="select(${i})">${o}</div>`).join('');
-  document.getElementById('question-num').textContent = `${current+1}/${questions.length}`;
-  document.getElementById('progress').style.width = `${(current/questions.length)*100}%`;
+function showQuestion(){
+  if(current>=questions.length) return showResult();
+  const q=questions[current];
+  document.getElementById('question').textContent=q.q;
+  document.getElementById('options').innerHTML=q.o.map((o,i)=>`<div class="option" onclick="select(${i})">${o}</div>`).join('');
+  document.getElementById('question-num').textContent=`${current+1}/${questions.length}`;
+  document.getElementById('progress').style.width=`${(current/questions.length)*100}%`;
 }
 
-function select(i) {
+function select(i){
   answers.push(i);
-  document.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+  document.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));
   document.querySelectorAll('.option')[i].classList.add('selected');
   current++;
-  setTimeout(showQuestion, 300);
+  setTimeout(showQuestion,250);
 }
 
-function showResult() {
-  const score = answers.reduce((a,b) => a+b, 0);
-  const keys = Object.keys(personas);
-  const persona = personas[keys[score % keys.length]];
-  
+function showResult(){
+  const score=answers.reduce((a,b)=>a+b,0);
+  const keys=Object.keys(personas);
+  const persona=personas[keys[score%keys.length]];
   document.getElementById('quiz-container').classList.add('hidden');
-  document.getElementById('result-card').style.display = 'block';
-  document.getElementById('result-emoji').textContent = persona.emoji;
-  document.getElementById('result-title').textContent = keys[score % keys.length];
-  document.getElementById('result-desc').textContent = persona.desc;
+  document.getElementById('result-card').style.display='block';
+  document.getElementById('result-emoji').textContent=persona.emoji;
+  document.getElementById('result-title').textContent=keys[score%keys.length];
+  document.getElementById('result-desc').textContent=persona.desc;
 }
 
-function share() {
-  const keys = Object.keys(personas);
-  const persona = personas[keys[answers.reduce((a,b)=>a+b,0) % keys.length]];
-  const text = encodeURIComponent(`${persona.shares} — find your crypto persona at`);
-  const url = encodeURIComponent(location.href);
-  window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+function share(){
+  const score=answers.reduce((a,b)=>a+b,0);
+  const keys=Object.keys(personas);
+  const p=personas[keys[score%keys.length]];
+  const text=encodeURIComponent(`I'm ${keys[score%keys.length]} ${p.emoji} — discover your crypto persona:`);
+  window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(location.href)}`,'_blank');
 }
 
-function restart() {
-  answers = []; current = 0;
-  document.getElementById('quiz-container').classList.remove('hidden');
-  document.getElementById('result-card').style.display = 'none';
-  showQuestion();
-}
+function restart(){answers=[];current=0;document.getElementById('quiz-container').classList.remove('hidden');document.getElementById('result-card').style.display='none';showQuestion();}
 
 showQuestion();
 </script>
